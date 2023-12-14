@@ -15,8 +15,8 @@ jobs:
         run : |
           docker build -t ${{secrets.USERNAME}}/action-project1:v1 -f Dockerfile .
           
-          - name: Push to Dockerhub 
-            run : docker login -u ${{secrets.USERNAME}} -p ${{secrets.USERNAME}} && \
+      - name: Push to Dockerhub 
+        run : docker login -u ${{secrets.USERNAME}} -p ${{secrets.USERNAME}} && \
             docker push ${{secrets.USERNAME}}/action-project1:v1
 
          
